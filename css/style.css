@@ -7,12 +7,25 @@ body {
 }
 
 .main-block-popup {
+  width: 100%;
+  height: 100%;
   display: none;
-  width: 700px;
+  justify-content: center;
   position: absolute;
-  top: 30px;
-  left: 32%;
+  top: 0px;
   z-index: 100000;
+}
+.main-block-popup .background {
+  background: #000;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.main-block-popup .popup-container {
+  z-index: 900000;
+  width: 713px;
+  margin: 0 auto;
 }
 .main-block-popup .popup-header {
   height: 74px;
@@ -30,16 +43,18 @@ body {
 .main-block-popup .popup-header .block-phone-img img {
   margin: 25px;
 }
+.main-block-popup .animated {
+  animation-duration: 3s;
+  animation-delay: 12s;
+}
 .main-block-popup .popup-container {
   display: flex;
   flex-direction: column;
   min-height: 595px;
-  animation-duration: 3s;
-  animation-delay: 2s;
 }
 .main-block-popup .popup-container .text {
   color: #174c2e;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "titilliumweb";
   text-transform: initial !important;
   border: 0 !important;
   padding: 0 !important;
@@ -141,7 +156,18 @@ body {
   flex-direction: column;
   margin-bottom: 28px;
 }
-.main-block-popup .main-content .block-content .block-content-title {
+.main-block-popup .main-content .block-content .result-message {
+  width: 100%;
+  background: #f9f2f4;
+  color: #c7254e;
+  margin: 16px 0px;
+  font-size: 16px;
+  font-family: "titilliumweb";
+  padding: 10px 10px;
+  border-radius: 5px;
+  display: none;
+}
+.main-block-popup .main-content .block-content .block-content-field {
   text-align: center;
   line-height: 75px;
   width: 100%;
@@ -152,10 +178,13 @@ body {
   font-weight: 300;
   margin-top: 13px;
   color: #174c2e;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "titilliumweb";
 }
-.main-block-popup .main-content .block-content .block-content-title:focus {
+.main-block-popup .main-content .block-content .block-content-field:focus {
   outline: none;
+}
+.main-block-popup .main-content .block-content .block-content-field:invalid {
+  outline-color: red;
 }
 .main-block-popup .main-content .block-content .block-content-button {
   border: 0;
@@ -217,7 +246,7 @@ body {
     align-items: center;
     width: 315px;
   }
-  .main-block-popup .popup-container .main-content .block-content .block-content-title {
+  .main-block-popup .popup-container .main-content .block-content .block-content-field {
     margin-top: 28px;
     font-size: 29px;
   }

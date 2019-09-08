@@ -18,3 +18,12 @@ function hide() {
     popup.style.display = 'none';
     console.log('hello');
 }
+
+function isNumber(e) {
+    var iKeyCode = e.keyCode;
+    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+        return false;
+
+        return true;
+    
+}
